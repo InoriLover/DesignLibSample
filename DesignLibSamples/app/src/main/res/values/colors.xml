@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent_soft_dark">#88a9a9a9</color>
+    <color name="skyblue">#6ad3ff</color>
+    <color name="blue">#009cff</color>
+    <color name="toolbar_color">@color/blue</color>
+</resources>

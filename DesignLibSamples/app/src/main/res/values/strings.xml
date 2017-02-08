@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DesignLibSamples</string>
+
+    <string name="menu_item_list">列表</string>
+    <string name="menu_item_info">信息</string>
+    <string name="menu_item_more">更多</string>
+</resources>
