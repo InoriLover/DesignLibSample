@@ -14,9 +14,8 @@
 
 ## 小记
 ### **关于Toolbar**
-* ## toolbar兼容Actionbar使用
-***
-将toolbar作为Actionbar使用的时候，需设置
+#
+> 将toolbar作为Actionbar使用的时候，需设置
 ```
 setSupportActionBar(toolbar);
 ```
@@ -28,8 +27,7 @@ toolbar.setTitle("主标题");
 ```
 toolbar.setNavigationIcon(R.mipmap.icon_navi);
 ```
-* ## toolbar作为layout容器使用
-***
+> toolbar作为layout容器使用
 需在xml布局中改变toolbar属性
 ```
 app:contentInsetStart="0dp"
