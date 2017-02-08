@@ -12,28 +12,4 @@
 
 </br>
 
-## 小记
-### **关于Toolbar**
-#
-> 将toolbar作为Actionbar使用的时候，需设置
-```
-setSupportActionBar(toolbar);
-```
-设置主标题需在此之前调用
-```
-toolbar.setTitle("主标题");
-```
-而设置导航icon需在此之后调用
-```
-toolbar.setNavigationIcon(R.mipmap.icon_navi);
-```
-> toolbar作为layout容器使用
-需在xml布局中改变toolbar属性
-```
-app:contentInsetStart="0dp"
-```
-否则子布局无法完全填充满toolbar，左边会有间隙
-
-
-</br>
 
