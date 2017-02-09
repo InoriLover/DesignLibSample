@@ -8,7 +8,7 @@ public class MenuItem {
     int resourceId;
     String content;
 
-    MenuItem(int resourceId, String content) {
+    public MenuItem(int resourceId, String content) {
         this.resourceId = resourceId;
         this.content = content;
     }

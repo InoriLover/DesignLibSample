@@ -54,12 +54,11 @@ public class MainActivity extends AppCompatActivity {
         sectionTemp.setItems(listTemp);
         sections.add(sectionTemp);
         //临时分组
-        Section sectionTemp2 = new Section("临时分组");
+        Section sectionTemp2 = new Section("TabLayout");
         List<SampleItem> listTemp2 = new ArrayList<>();
         try {
-            listTemp2.add(new SampleItem(Class.forName(mainPackage + ".temp.TempActivity"), "临时Activity"));
-            listTemp2.add(new SampleItem(Class.forName(mainPackage + ".temp.TempActivity"), "临时Activity"));
-            listTemp2.add(new SampleItem(Class.forName(mainPackage + ".temp.TempActivity"), "临时Activity"));
+            listTemp2.add(new SampleItem(Class.forName(mainPackage + ".tablayout.TabLayoutSample1"), "普通TabLayout"));
+            listTemp2.add(new SampleItem(Class.forName(mainPackage + ".tablayout.TabLayoutSample2"), "可添加式TabLayout"));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

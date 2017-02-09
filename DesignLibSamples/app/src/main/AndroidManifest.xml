@@ -15,15 +15,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".temp.TempActivity">
-        </activity>
-        <activity
             android:name=".toolbar.ToolbarSample1"
             android:theme="@style/CustomToolbarTheme">
         </activity>
         <activity
             android:name=".toolbar.ToolbarSample2"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".tablayout.TabLayoutSample1">
+        </activity>
+        <activity
+            android:name=".tablayout.TabLayoutSample2">
         </activity>
     </application>
 
