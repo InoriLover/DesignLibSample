@@ -48,20 +48,15 @@ public class TabLayoutSample2 extends AppCompatActivity {
         imgAdd = (ImageView) findViewById(R.id.imgAdd);
         fragmentViewpager = (ViewPager) findViewById(R.id.content);
         createData();
-        confViewpager();
-        //已经添加过的tabItem
-        addedItems = new ArrayList<>();
-        addedItems.add(tabItems.get(0));
-        addedItems.add(tabItems.get(1));
-        addedItems.add(tabItems.get(2));
-
+        fragments = new ArrayList<>();
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments);
         fragmentViewpager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(fragmentViewpager);
-        refreshTablayoutItem();
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(android.R.color.white));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         tabLayout.setTabTextColors(getResources().getColor(R.color.alpha_snow_white),
                 getResources().getColor(R.color.snow_white));
+        addDefaultFragmentItem();
         imgAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +69,7 @@ public class TabLayoutSample2 extends AppCompatActivity {
      * 创建模拟数据
      */
     void createData() {
+        //所有的tabItems
         tabItems = new ArrayList<>();
         tabItems.add(new MenuItem(R.mipmap.tab_item_edit, "编辑"));
         tabItems.add(new MenuItem(R.mipmap.tab_item_global, "全球"));
@@ -87,6 +83,8 @@ public class TabLayoutSample2 extends AppCompatActivity {
         tabItems.add(new MenuItem(R.mipmap.tab_item_tool, "工具"));
         tabItems.add(new MenuItem(R.mipmap.tab_item_user, "用户"));
         tabItems.add(new MenuItem(R.mipmap.tab_item_web, "网页"));
+        //已经添加过的tabItem
+        addedItems = new ArrayList<>();
     }
 
     /**
@@ -134,25 +132,28 @@ public class TabLayoutSample2 extends AppCompatActivity {
     }
 
     /**
-     * 配置viewpager
+     * 添加默认的Fragment
      */
-    void confViewpager() {
+    void addDefaultFragmentItem() {
+        addedItems.add(tabItems.get(0));
+        addedItems.add(tabItems.get(1));
+        addedItems.add(tabItems.get(2));
         ContentFragment fragment1 = new ContentFragment();
         ContentFragment fragment2 = new ContentFragment();
         ContentFragment fragment3 = new ContentFragment();
         Bundle bundle1 = new Bundle();
-        bundle1.putString(ContentFragment.TAG_TITLE, tabItems.get(0).getContent());
+        bundle1.putString(ContentFragment.TAG_TITLE, addedItems.get(0).getContent());
         fragment1.setArguments(bundle1);
         Bundle bundle2 = new Bundle();
-        bundle2.putString(ContentFragment.TAG_TITLE, tabItems.get(1).getContent());
+        bundle2.putString(ContentFragment.TAG_TITLE, addedItems.get(1).getContent());
         fragment2.setArguments(bundle2);
         Bundle bundle3 = new Bundle();
-        bundle3.putString(ContentFragment.TAG_TITLE, tabItems.get(2).getContent());
+        bundle3.putString(ContentFragment.TAG_TITLE, addedItems.get(2).getContent());
         fragment3.setArguments(bundle3);
-        fragments = new ArrayList<>();
         fragments.add(fragment1);
         fragments.add(fragment2);
         fragments.add(fragment3);
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments);
+        viewPagerAdapter.notifyDataSetChanged();
+        refreshTablayoutItem();
     }
 }
