@@ -2,6 +2,7 @@ package com.designlibsamples;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         }
         sectionTemp.setItems(listTemp);
         sections.add(sectionTemp);
-        //临时分组
+        //Tablayout分组
         Section sectionTemp2 = new Section("TabLayout");
         List<SampleItem> listTemp2 = new ArrayList<>();
         try {
@@ -64,6 +65,21 @@ public class MainActivity extends AppCompatActivity {
         }
         sectionTemp2.setItems(listTemp2);
         sections.add(sectionTemp2);
+        //CoordinatorLayout分组
+        Section sectionTemp3 = new Section("CoordinatorLayout");
+        List<SampleItem> listTemp3 = new ArrayList<>();
+        try {
+            listTemp3.add(new SampleItem(Class.forName(mainPackage +
+                    ".coordinatorlayout.CoordinatorLayoutSample1"), "官方示例"));
+            listTemp3.add(new SampleItem(Class.forName(mainPackage +
+                    ".coordinatorlayout.CoordinatorLayoutSample2"), "自定义Behavior"));
+            listTemp3.add(new SampleItem(Class.forName(mainPackage +
+                    ".coordinatorlayout.CoordinatorLayoutSample3"), "顶部底部bar隐藏"));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        sectionTemp3.setItems(listTemp3);
+        sections.add(sectionTemp3);
         return sections;
     }
 }

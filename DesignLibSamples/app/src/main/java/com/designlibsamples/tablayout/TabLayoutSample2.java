@@ -2,6 +2,7 @@ package com.designlibsamples.tablayout;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -98,7 +99,7 @@ public class TabLayoutSample2 extends AppCompatActivity {
             TabItemAdapter tabItemAdapter = new TabItemAdapter(this, tabItems);
             tabItemAdapter.setOnItemClickListener(onItemClickListener);
             recyclerView.setAdapter(tabItemAdapter);
-            addTabItemDialog = new AlertDialog.Builder(this).setView(dialogView).create();
+            addTabItemDialog = new AlertDialog.Builder(getApplicationContext()).setView(dialogView).create();
         }
         addTabItemDialog.show();
     }
